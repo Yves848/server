@@ -30,6 +30,13 @@ app.get('/evolution', async (req,res) => {
   await client.end();
 });
 
+app.get('/insert', async (req,res) => {
+  const date = req.query.date;
+  const poids = req.query.poids;
+  res.send({message : 'ok'});
+  console.log(date,poids);
+});
+
 app.listen(PORT, () => {
   console.log(`Server listening on ${PORT}`);
 });
